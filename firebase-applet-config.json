@@ -1,0 +1,13 @@
+{
+  "projectId": "coreai-a7cf4",
+  "appId": "1:152164036052:web:5e51334176a0b20debba41",
+  "apiKey": "AIzaSyCJXfFwq1FfTw_DvSkSbgOAhjToplnIWFg",
+  "authDomain": "coreai-a7cf4.firebaseapp.com",
+  "databaseURL": "https://coreai-a7cf4-default-rtdb.firebaseio.com",
+  "storageBucket": "coreai-a7cf4.firebasestorage.app",
+  "messagingSenderId": "152164036052",
+  "measurementId": "",
+  "oAuthClientId": "",
+  "recaptchaSiteKey": "",
+  "firestoreDatabaseId": "(default)"
+}
