@@ -196,6 +196,7 @@ export default function App() {
   const [showMoreMenu, setShowMoreMenu] = useState(false);
   const [showAvatarModal, setShowAvatarModal] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authModalDismissed, setAuthModalDismissed] = useState(false);
   const [showCustomizeModal, setShowCustomizeModal] = useState(false);
   const [showVoiceTutorModal, setShowVoiceTutorModal] = useState(false);
   const [currentUser, setCurrentUser] = useState<FirebaseUser | null>(null);
@@ -1157,8 +1158,6 @@ export default function App() {
             
             {/* 1. TOP USER CARD - REFINED MODERN AMBIENT PROFILE WITH ANIMATED AURA LIGHT */}
             <div id="top-user-card" className={`relative p-[1.5px] ${cornerRadius.casing || 'rounded-3xl'} shadow-xl transition-all duration-300 group`}>
-              {/* Ambient Aura Outer Shadow Glow */}
-              <div className={`absolute -inset-4 bg-gradient-to-r from-indigo-500 via-purple-500 via-pink-500 via-amber-500 via-emerald-500 via-cyan-500 to-indigo-500 opacity-40 blur-2xl group-hover:opacity-65 transition-opacity duration-300 ${cornerRadius.casing || 'rounded-3xl'} animate-aura-border pointer-events-none`} style={{ backgroundSize: '400% 400%', zIndex: -1 }} />
               
               {/* Rotating Border Glow Element */}
               <div className={`absolute inset-0 ${cornerRadius.casing || 'rounded-3xl'} overflow-hidden pointer-events-none z-0`}>
@@ -3501,11 +3500,10 @@ export default function App() {
 
       {/* AUTHENTICATION MODAL (SIGN IN, SIGN UP, GOOGLE, FORGOT PASSWORD) */}
       <AuthModal
-        isOpen={showAuthModal || (authInitialized && !isUserLoggedIn)}
+        isOpen={showAuthModal || (authInitialized && !isUserLoggedIn && !authModalDismissed)}
         onClose={() => {
-          if (isUserLoggedIn) {
-            setShowAuthModal(false);
-          }
+          setShowAuthModal(false);
+          setAuthModalDismissed(true);
         }}
         userProfile={userProfile}
         setUserProfile={setUserProfile}
