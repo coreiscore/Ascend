@@ -492,3 +492,33 @@ html.dark #main-app-container .backdrop-blur-xl {
   #main-app-container > div.fixed.inset-0.z-50.bg-\[\#f8fafc\] > div.flex-1.overflow-y-auto { padding-top: 18px; padding-bottom: 196px; scroll-padding-bottom: 196px; }
   #main-app-container > div.fixed.inset-0.z-50.bg-\[\#f8fafc\] > footer { padding-top: 8px; }
 }
+
+/* --- Animated Profile Aura & Glowing Border Effects --- */
+@keyframes auraRotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes auraBorderShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-aura-rotate {
+  animation: auraRotate 6s linear infinite;
+}
+
+.animate-aura-border {
+  animation: auraBorderShift 8s ease infinite;
+}

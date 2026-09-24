@@ -1155,10 +1155,18 @@ export default function App() {
         {activeTab === 'home' && (
           <div className="space-y-4">
             
-            {/* 1. TOP USER CARD - REFINED MODERN AMBIENT PROFILE */}
-            <div id="top-user-card" className={`relative p-[1.5px] ${cornerRadius.casing || 'rounded-3xl'} bg-gradient-to-b from-indigo-500/30 via-slate-800/40 to-slate-800/20 border border-slate-800/60 shadow-lg transition-all duration-300`}>
+            {/* 1. TOP USER CARD - REFINED MODERN AMBIENT PROFILE WITH ANIMATED AURA LIGHT */}
+            <div id="top-user-card" className={`relative p-[1.5px] ${cornerRadius.casing || 'rounded-3xl'} shadow-xl transition-all duration-300 group`}>
+              {/* Ambient Aura Outer Shadow Glow */}
+              <div className={`absolute -inset-4 bg-gradient-to-r from-indigo-500 via-purple-500 via-pink-500 via-amber-500 via-emerald-500 via-cyan-500 to-indigo-500 opacity-40 blur-2xl group-hover:opacity-65 transition-opacity duration-300 ${cornerRadius.casing || 'rounded-3xl'} animate-aura-border pointer-events-none`} style={{ backgroundSize: '400% 400%', zIndex: -1 }} />
+              
+              {/* Rotating Border Glow Element */}
+              <div className={`absolute inset-0 ${cornerRadius.casing || 'rounded-3xl'} overflow-hidden pointer-events-none z-0`}>
+                <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] bg-[conic-gradient(from_0deg,transparent_30%,#6366f1_45%,#a855f7_55%,#f43f5e_65%,#eab308_75%,#10b981_85%,transparent_100%)] animate-aura-rotate" />
+              </div>
+
               {/* INNER DARK SLATE BACKDROP */}
-              <div className="relative overflow-hidden rounded-[23px] bg-slate-950/90 backdrop-blur-xl px-4 pt-3.5 pb-4 sm:px-5 sm:pt-4 sm:pb-5 space-y-3.5">
+              <div className="relative overflow-hidden rounded-[23px] bg-slate-950/90 backdrop-blur-xl px-4 pt-3.5 pb-4 sm:px-5 sm:pt-4 sm:pb-5 space-y-3.5 z-10">
                 {/* Subtle Ambient Glows */}
                 <div className="absolute -top-16 -left-16 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
                 <div className="absolute -top-16 -right-16 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
